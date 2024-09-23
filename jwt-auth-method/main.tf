@@ -65,7 +65,7 @@ resource "vault_jwt_auth_backend_role" "admin-role" {
   backend = vault_jwt_auth_backend.example.path
   role_name = var.tfc_aws_secret_role_name
   token_policies = [vault_policy.example.name]
-  bound_audiences = [vault.workload.identity]
+  bound_audiences = ["vault.workload.identity"]
   bound_claims_type = "glob"
   bound_claims = {
     sub = "organization:hellocloud-cohort7-team:project:Default Project:workspace:*:run_phase:*"
