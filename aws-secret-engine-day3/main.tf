@@ -1,9 +1,9 @@
 # Configure the AWS secret backend in Vault with access and secret keys
 resource "vault_aws_secret_backend" "aws" {
-  access_key = aws_iam_access_key.vault_admin.id
-  secret_key = aws_iam_access_key.vault_admin.secret
+  access_key = aws_iam_access_key.vault_admin_access_key.id
+  secret_key = aws_iam_access_key.vault_admin_access_key.secret
   region     = "ap-southeast-1"
-  path       = "aws-master"
+  path       = "aws-master-account"
 
   # Set default and maximum lease durations for AWS credentials
   default_lease_ttl_seconds = 900
