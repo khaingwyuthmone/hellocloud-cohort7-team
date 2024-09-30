@@ -1,4 +1,4 @@
-variable "vault-admin" {
-  type = string
+variable "vault_admin" {
+  type    = string
   default = "vault-admin"
 }
