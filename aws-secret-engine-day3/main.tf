@@ -20,8 +20,8 @@ resource "vault_aws_secret_backend_role" "role" {
   policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]
 }
 
-# Fetch AWS access credentials for the defined role from Vault
-data "vault_aws_access_credentials" "creds" {
-  backend = vault_aws_secret_backend.aws.path
-  role    = vault_aws_secret_backend_role.role.name
-}
+# # Fetch AWS access credentials for the defined role from Vault
+# data "vault_aws_access_credentials" "creds" {
+#   backend = vault_aws_secret_backend.aws.path
+#   role    = vault_aws_secret_backend_role.role.name
+# }
