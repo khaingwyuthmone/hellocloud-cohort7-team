@@ -8,6 +8,6 @@ resource "hcp_hvn" "vault_hvn" {
 resource "hcp_vault_cluster" "vault_cluster" {
   cluster_id = "cohort7-vault-cluster"
   hvn_id     = hcp_hvn.vault_hvn.hvn_id
-  tier       = "starter_small"
+  tier       = "dev"
   public_endpoint = true
 }
