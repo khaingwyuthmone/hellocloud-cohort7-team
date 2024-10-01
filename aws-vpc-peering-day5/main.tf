@@ -4,7 +4,7 @@
 resource "hcp_aws_network_peering" "dev" {
 #   hvn_id          = hcp_hvn.main.hvn_id
   hvn_id          = var.hvn_id
-  peering_id      = "hvn_vpc_peering"
+  peering_id      = "hvn-vpc-peering"
   peer_vpc_id     = data.terraform_remote_state.vpc.outputs.vpc_id
   peer_account_id = data.aws_vpc.selected.owner_id
   peer_vpc_region = data.aws_arn.arn.region
