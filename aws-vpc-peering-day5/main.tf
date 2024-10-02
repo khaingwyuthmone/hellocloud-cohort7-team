@@ -33,13 +33,13 @@ resource "hcp_hvn_route" "hvn-to-db" {
 
 # Add HVN to AWS RouteTable
 resource "aws_route" "private_route" {
-  route_table_id            = data.aws_route_table.private_rt.route_table_id
+  route_table_id            = data.aws_route_table.private_rt.id
   destination_cidr_block    = data.hcp_hvn.hvn.cidr_block
-  vpc_peering_connection_id = hcp_aws_network_peering.dev.peering_id
+  vpc_peering_connection_id = aws_vpc_peering_connection_accepter.peer.id
 }
 
 resource "aws_route" "db_route" {
-  route_table_id            = data.aws_route_table.db_rt.route_table_id
+  route_table_id            = data.aws_route_table.db_rt.id
   destination_cidr_block    = data.hcp_hvn.hvn.cidr_block
-  vpc_peering_connection_id = hcp_aws_network_peering.dev.peering_id
+  vpc_peering_connection_id = aws_vpc_peering_connection_accepter.peer.id
 }
